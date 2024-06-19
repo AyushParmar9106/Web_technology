@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<script>
+	var a = (parseInt(prompt("enter a number")))
+	console.log(a)
+	var temp=a,n,rem=0;
+	while(a!=0){
+	n = a%10;
+	rem+=n*n*n;
+	a = parseInt(a/10);
+	
+}
+if(rem==temp){
+	document.write("number is armstrong")
+}
+else{
+	document.write("number is not armstrong")
+}
+
+</script>
+</body>
+</html>
