@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+		<script>
+			var num=[]
+			var size =parseInt(prompt("enter a size of array"))
+
+			for(var i=0;i<size;i++){
+				element = parseInt(prompt(`enter ${i+1} array`))
+				num.push(element)
+			}
+
+		 num.sort(function(a,b){
+		 	return a-b
+		 })
+		 document.write(num)
+
+		</script>
+</body>
+</html>

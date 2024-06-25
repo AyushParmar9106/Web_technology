@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<script>
+		var num=[]
+		var size =parseInt(prompt("enter a size of array"))
+
+		for(var i=0;i<size;i++){
+			element = parseInt(prompt(`enter ${i+1} array`))
+			num.push(element)
+		}
+		var max=num[0]
+		for(var i=0;i<size;i++){
+			if(max<num[i]){
+				max = num[i]
+			}
+			else{
+				continue
+			}
+			
+		}
+
+      console.log(num)
+		document.write("max number= "+max)
+	</script>
+</body>
+</html>
