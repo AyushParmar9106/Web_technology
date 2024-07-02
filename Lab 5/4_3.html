@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Password Validation Example</title>
+<style>
+    .error {
+        color: red;
+    }
+</style>
+</head>
+<body>
+    <form id="passwordForm">
+        <label for="password">Password:</label><br>
+        <input type="password" id="password" name="password"><br>
+        
+        <label for="repeatPassword">Repeat Password:</label><br>
+        <input type="password" id="repeatPassword" name="repeatPassword"><br>
+        
+        <button type="submit">Submit</button>
+    </form>
+
+    <div id="errorMessages"></div>
+
+    <script>
+        const form = document.getElementById('passwordForm');
+        const errorMessages = document.getElementById('errorMessages');
+
+        form.addEventListener('submit', function(event) {
+            event.preventDefault();
+            errorMessages.innerHTML = ''; 
+
+            const password = document.getElementById('password').value;
+            const repeatPassword = document.getElementById('repeatPassword').value;
+
+            if (password !== repeatPassword) {
+                showError('Passwords do not match');
+            } else {
+               
+                alert('Form submitted successfully!');
+                form.reset(); 
+            }
+        });
+
+        function showError(message) {
+            const error = document.createElement('div');
+            error.className = 'error';
+            error.textContent = message;
+            errorMessages.appendChild(error);
+        }
+    </script>
+</body>
+</html>

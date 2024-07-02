@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+
+	</title>
+</head>
+<body>
+	<label>Username::</label>
+	<input type="text" id="Username">
+	<button onclick="validation()">submit</button>
+	<div id="success" style="color: green;height: 20px">
+		
+	</div>
+	<div id="error" style="color: red;height: 20px"></div>
+	<script>
+		function validation(){
+		user = document.getElementById("Username").value;
+		userRegex = /^(?=.*[A-Za-z])(?=.*\d).{8,}$/
+
+		
+
+		if(userRegex.test(user)){
+			document.getElementById("success").innerHTML ="valid username"
+			document.getElementById("error").innerHTML =""
+		}
+		else{
+			document.getElementById("error").innerHTML ="invalid username"
+			document.getElementById("success").innerHTML =""
+		}
+		}
+	</script>
+</body>
+</html>
