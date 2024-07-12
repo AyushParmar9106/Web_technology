@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<input type="text" id="create" name="" placeholder="name">
+<button onclick="Add()">Add</button>
+<div id="show"></div>
+<input type="text" id="index" name="">
+<input type="text" id="updateData" name="">
+<button onclick="Updatevalue()">Update</button>
+
+	<script>
+		const arr=[]
+		function Add(){
+		getvalue = document.getElementById("create")
+		if(getvalue.value== ""){
+			alert("Input is empty")
+		}
+		else{
+			arr.push(getvalue.value)
+		}
+			
+			console.log(arr)
+			getvalue.value = ""
+			display()
+
+		}
+		function display(){
+			var a = document.getElementById("show")
+			a.innerHTML=""
+
+			for(let i=0;i<arr.length;i++){
+				a.innerHTML += arr[i]+ `<button onclick="Delete(${i})">Delete</button>` +"<br>" 
+
+			}
+		}
+		function Delete(index){
+			arr.splice(index,1)
+			display()
+		}
+		function Updatevalue(){
+			let index= document.getElementById("index").value
+			let updateData= document.getElementById("updateData").value
+			if(index<arr.length && index>=0){
+				arr[index]= updateData
+			display()
+			}
+			else{
+				alert("enter a valid index")
+			}
+			
+			
+		}
+		
+	</script>
+</body>
+</html>
